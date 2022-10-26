@@ -1,0 +1,49 @@
+<script setup lang="ts" name="SidebarItem">
+import { reactive, ref, defineProps, computed } from 'vue'
+
+const props = defineProps({
+  item: {
+    type: Object,
+    require: true
+  },
+  key: {
+    type: String,
+    require: true
+  }
+})
+const a = computed(() => {
+  return props.item?.children && props.item.meta?.title
+})
+const b = computed(() => {
+  return props.item?.children
+})
+const c = computed(() => {
+  console.log(props.item?.children?.length)
+  return props.item?.children?.length
+})
+</script>
+
+<template>
+  <div v-if="!item?.meta?.hidden">
+    <a-sub-menu :key="item?.path" v-if="a">
+      <template #icon>
+        <svg-icon :icon-class="item?.meta.icon" style="width: 10px; height: 10px"></svg-icon>
+      </template>
+      <template #title>
+        <span>{{ item?.meta.title }}</span>
+      </template>
+      <SidebarItem v-for="child in item?.children" :item="child" :key="child.path"></SidebarItem>
+    </a-sub-menu>
+    <a-menu-item v-else :key="b ? item?.children[0].path : item?.path">
+      <template #icon>
+        <svg-icon
+          :icon-class="b ? item?.children[0].meta.icon : item?.meta.icon"
+          style="width: 10px; height: 10px; color: currentColor"
+        ></svg-icon>
+      </template>
+      {{ b ? item?.children[0].meta.title : item?.meta.title }}
+    </a-menu-item>
+  </div>
+</template>
+
+<style scoped lang="less"></style>
