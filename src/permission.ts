@@ -22,7 +22,7 @@ router.beforeEach(async (to, from, next) => {
     if (!user.username) {
       // 读取角色信息
       let menus = await user.getUserInfo()
-      // 调用过滤筛选动态路由的ation 传入权限菜单标识
+      // 调用过滤筛选动态路由的action 传入权限菜单标识
       let routers = await permission.filterRoutes(menus)
       console.log(routers)
       routers.forEach((item) => {

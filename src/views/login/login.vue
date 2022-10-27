@@ -15,8 +15,8 @@ const formState = reactive<FormState>({
 })
 const onFinish = async (values: any) => {
   await user.login(values)
+  router.push('/')
   await user.getUserInfo()
-  router.push('/dashboard')
 }
 
 const onFinishFailed = (errorInfo: any) => {

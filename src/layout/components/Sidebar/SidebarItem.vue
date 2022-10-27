@@ -26,21 +26,21 @@ const c = computed(() => {
 <template>
   <div v-if="!item?.meta?.hidden">
     <a-sub-menu :key="item?.path" v-if="a">
-      <template #icon>
-        <svg-icon :icon-class="item?.meta.icon" style="width: 10px; height: 10px"></svg-icon>
-      </template>
+      <template #icon></template>
       <template #title>
+        <svg-icon
+          :icon-class="item?.meta.icon"
+          style="width: 10px; height: 10px; fill: currentColor; margin-right: 5px"
+        ></svg-icon>
         <span>{{ item?.meta.title }}</span>
       </template>
       <SidebarItem v-for="child in item?.children" :item="child" :key="child.path"></SidebarItem>
     </a-sub-menu>
     <a-menu-item v-else :key="b ? item?.children[0].path : item?.path">
-      <template #icon>
-        <svg-icon
-          :icon-class="b ? item?.children[0].meta.icon : item?.meta.icon"
-          style="width: 10px; height: 10px; color: currentColor"
-        ></svg-icon>
-      </template>
+      <svg-icon
+        :icon-class="b ? item?.children[0].meta.icon : item?.meta.icon"
+        style="width: 10px; height: 10px; fill: currentColor; margin-right: 5px"
+      ></svg-icon>
       {{ b ? item?.children[0].meta.title : item?.meta.title }}
     </a-menu-item>
   </div>

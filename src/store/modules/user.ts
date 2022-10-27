@@ -18,7 +18,7 @@ export default defineStore('user', {
     quit() {
       this.token = ''
       removeToken()
-      router.push('/login')
+      window.location.href = '/'
     },
     async getUserInfo() {
       const res = await getUser()
