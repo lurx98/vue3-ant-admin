@@ -25,8 +25,12 @@ router.beforeEach(async (to, from, next) => {
       // 调用过滤筛选动态路由的action 传入权限菜单标识
       let routers = await permission.filterRoutes(menus)
       console.log(routers)
-      routers.forEach((item) => {
+      routers.forEach(item => {
         router.addRoute(item)
+      })
+      router.addRoute({
+        path: '/:pathMatch(.*)*',
+        redirect: '/404'
       })
       next(to.path)
     } else {

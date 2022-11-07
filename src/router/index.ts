@@ -24,6 +24,13 @@ export const constRouter: RouteRecordRaw[] = [
     meta: {
       hidden: true
     }
+  },
+  {
+    path: '/404',
+    component: () => import('@/views/404.vue'),
+    meta: {
+      hidden: true
+    }
   }
 ]
 export const asyncRouter: RouteRecordRaw[] = [
