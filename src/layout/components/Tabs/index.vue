@@ -6,7 +6,7 @@ const route = useRoute()
 const router = useRouter()
 const { tabs } = useStore()
 const activeKey = ref(route.path)
-const onEdit = (targetKey: string, action: string) => {
+const onEdit = (targetKey: any, action: 'add' | 'remove'): void => {
   console.log(targetKey, action)
   if (action === 'remove') {
     tabs.del(targetKey)
@@ -15,7 +15,7 @@ const onEdit = (targetKey: string, action: string) => {
 watch(route, () => {
   activeKey.value = route.path
 })
-const tabClick = (val: string) => {
+const tabClick = (val: any) => {
   router.push(val)
 }
 </script>

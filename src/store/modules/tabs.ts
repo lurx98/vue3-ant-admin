@@ -10,7 +10,7 @@ export default defineStore('tabs', {
   actions: {
     add(obj: any) {
       const item = { ...obj }
-      const index = this.tab.findIndex(val => {
+      const index = this.tab.findIndex((val) => {
         return val.path === item.path
       })
       console.log(item, index)
@@ -19,8 +19,8 @@ export default defineStore('tabs', {
         this.tab.push(item)
       }
     },
-    del(val: string) {
-      const index = this.tab.findIndex(v => {
+    del(val: string | MouseEvent) {
+      const index = this.tab.findIndex((v) => {
         return v.path === val
       })
       this.tab.splice(index, 1)

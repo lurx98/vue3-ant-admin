@@ -12,19 +12,18 @@ const props = defineProps({
   }
 })
 const a = computed(() => {
-  return props.item?.children && props.item.meta?.title
+  return props.item?.children && props.item?.meta?.title
 })
 const b = computed(() => {
   return props.item?.children
 })
 const c = computed(() => {
-  console.log(props.item?.children?.length)
-  return props.item?.children?.length
+  return props.item?.children?.length === 0
 })
 </script>
 
 <template>
-  <div v-if="!item?.meta?.hidden">
+  <div v-if="!item?.meta?.hidden && !c">
     <a-sub-menu :key="item?.path" v-if="a">
       <template #icon></template>
       <template #title>

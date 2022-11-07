@@ -14,7 +14,7 @@ Mock.mock('/api/addgoods', 'post', function (option) {
     })
   }
 })
-Mock.mock(baseURL + '/user/login', 'post', (option) => {
+Mock.mock(baseURL + '/user/login', 'post', option => {
   console.log(option)
   return Mock.mock({
     status: 200,
@@ -22,7 +22,7 @@ Mock.mock(baseURL + '/user/login', 'post', (option) => {
     token: '@guid'
   })
 })
-Mock.mock(baseURL + '/user/userInfo', 'get', (option) => {
+Mock.mock(baseURL + '/user/userInfo', 'get', option => {
   console.log(option)
   return Mock.mock({
     status: 200,
