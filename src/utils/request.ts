@@ -20,7 +20,7 @@ service.interceptors.request.use(
     }
     return config
   },
-  (error) => {
+  error => {
     // do something with request error
     console.log(error) // for debug
     return Promise.reject(error)
@@ -39,11 +39,11 @@ service.interceptors.response.use(
    * Here is just an example
    * You can also judge the status by HTTP Status Code
    */
-  (response) => {
+  response => {
     const res = response.data
     return res
   },
-  (error) => {
+  error => {
     console.log('err' + error) // for debug
 
     return Promise.reject(error)

@@ -4,7 +4,7 @@ import Components from 'unplugin-vue-components/vite'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import AutoImport from 'unplugin-auto-import/vite'
-
+import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -22,7 +22,8 @@ export default defineConfig({
       iconDirs: [path.resolve(process.cwd(), 'src/icons/svg')],
       // 指定symbolId格式
       symbolId: 'icon-[dir]-[name]'
-    })
+    }),
+    VueSetupExtend()
   ],
   resolve: {
     //设置路径别名

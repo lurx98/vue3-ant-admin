@@ -1,6 +1,4 @@
-<script setup lang="ts" name="App">
-import { reactive, ref } from 'vue'
-</script>
+<script setup lang="ts" name="App"></script>
 
 <template>
   <router-view></router-view>
