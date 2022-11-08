@@ -19,7 +19,7 @@ const collapsed = ref<boolean>(false)
           <a-breadcrumb-item>List</a-breadcrumb-item>
           <a-breadcrumb-item>App</a-breadcrumb-item>
         </a-breadcrumb> -->
-        <a-layout-content :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }">
+        <a-layout-content>
           <router-view></router-view>
         </a-layout-content>
       </a-layout>
@@ -27,10 +27,18 @@ const collapsed = ref<boolean>(false)
   </a-layout>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
 .ant-layout {
   width: 100%;
-  min-height: 100%;
+  // min-height: 100%;
+  height: 100%;
+}
+.ant-layout-content {
+  background-color: #fff;
+  padding: 24px;
+  margin: 0;
+  height: 100%;
+  overflow-y: scroll;
 }
 .body {
   margin-top: 64px;

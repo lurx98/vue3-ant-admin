@@ -7,7 +7,6 @@ const router = useRouter()
 const { tabs } = useStore()
 const activeKey = ref(route.path)
 const onEdit = (targetKey: any, action: 'add' | 'remove'): void => {
-  console.log(targetKey, action)
   if (action === 'remove') {
     tabs.del(targetKey)
   }

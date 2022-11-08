@@ -46,24 +46,22 @@ watch(
     const result = findPatentValue(permission.routers, route.path)
     tabs.add(route)
     selectedKeys2.value = result
-    openKeys.value = result
   },
   { immediate: true }
 )
 const routers = computed(() => {
-  console.log('222')
+  console.log(route.matched)
   return permission.routers
 })
 </script>
 
 <template>
-  <a-layout-sider width="200" style="background: #fff" class="scrollBar">
+  <a-layout-sider width="250" style="background: #fff" class="scrollBar">
     <a-menu
-      class="aaaaaa"
+      class="menu-container"
       v-model:selectedKeys="selectedKeys2"
       v-model:openKeys="openKeys"
       mode="inline"
-      :style="{ height: '100%', borderRight: 0 }"
       @click="afn"
     >
       <sidebar-item v-for="item in routers" :item="item" :key="item.path"></sidebar-item>
@@ -71,11 +69,11 @@ const routers = computed(() => {
   </a-layout-sider>
 </template>
 
-<style lang="scss">
-.aaaaaa {
-  width: 200px;
-  position: fixed;
-  top: 64px;
-  overflow: scroll;
+<style lang="scss" scoped>
+.menu-container {
+  height: 100%;
+  border-right: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 </style>
