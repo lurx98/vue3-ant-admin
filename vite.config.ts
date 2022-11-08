@@ -3,6 +3,8 @@ import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import AutoImport from 'unplugin-auto-import/vite'
+
 import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,6 +12,10 @@ export default defineConfig({
     vue(),
     Components({
       resolvers: [AntDesignVueResolver()]
+    }),
+    AutoImport({
+      include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/],
+      imports: ['vue', 'vue-router', 'pinia']
     }),
     createSvgIconsPlugin({
       // 指定需要缓存的图标文件夹(路径为存放所有svg图标的文件夹不单个svg图标)

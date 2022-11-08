@@ -1,6 +1,4 @@
 <script setup lang="ts" name="SidebarItem">
-import { reactive, ref, computed } from 'vue'
-
 const props = defineProps({
   item: {
     type: Object,

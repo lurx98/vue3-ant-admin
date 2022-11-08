@@ -1,9 +1,7 @@
 <script setup lang="ts" name="Sidebar">
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons-vue'
 import SidebarItem from './SidebarItem.vue'
-import { reactive, ref, computed, watch, nextTick } from 'vue'
 import type { MenuProps } from 'ant-design-vue'
-import { useRouter, useRoute, RouteRecordRaw } from 'vue-router'
+import { RouteRecordRaw } from 'vue-router'
 import useStore from '../../../store/index'
 const { tabs, permission } = useStore()
 const route = useRoute()
@@ -45,6 +43,7 @@ watch(
   () => {
     const result = findPatentValue(permission.routers, route.path)
     tabs.add(route)
+    console.log(result)
     selectedKeys2.value = result
   },
   { immediate: true }

@@ -1,7 +1,5 @@
 <script setup lang="ts" name="Tabs">
-import { reactive, ref, watch } from 'vue'
 import useStore from '../../../store/index'
-import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 const { tabs } = useStore()

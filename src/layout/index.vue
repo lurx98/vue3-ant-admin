@@ -2,7 +2,6 @@
 import Navbar from './components/Navbar/index.vue'
 import Sidebar from './components/Sidebar/index.vue'
 import Tabs from './components/Tabs/index.vue'
-import { reactive, ref } from 'vue'
 
 const collapsed = ref<boolean>(false)
 </script>

@@ -1,5 +1,4 @@
 <script setup lang="ts" name="Navbar">
-import { reactive, ref } from 'vue'
 import { UserOutlined, DownOutlined } from '@ant-design/icons-vue'
 import useStore from '../../../store/index'
 const { user } = useStore()
