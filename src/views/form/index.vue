@@ -1,6 +1,4 @@
-<script setup lang="ts" name="Form">
-import { reactive, ref } from 'vue'
-</script>
+<script setup lang="ts" name="Form"></script>
 
 <template>
   <h1>Form</h1>

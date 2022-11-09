@@ -25,7 +25,6 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
 const message = ref('The webmaster said that you can not enter this page...')
 </script>
 

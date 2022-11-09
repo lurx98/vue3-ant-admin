@@ -1,6 +1,4 @@
-<script setup lang="ts" name="user">
-import { reactive, ref } from 'vue'
-</script>
+<script setup lang="ts" name="user"></script>
 
 <template>
   <h1>user</h1>

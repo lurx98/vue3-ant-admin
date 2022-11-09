@@ -1,5 +1,4 @@
 <script setup lang="ts" name="login">
-import { reactive, ref } from 'vue'
 import useStore from '@/store/index'
 import router from '../../router/index'
 const { user } = useStore()

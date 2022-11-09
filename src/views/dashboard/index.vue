@@ -1,6 +1,4 @@
-<script setup lang="ts" name="dashboard">
-import { reactive, ref } from 'vue'
-</script>
+<script setup lang="ts" name="dashboard"></script>
 
 <template>
   <h1>dashboard</h1>

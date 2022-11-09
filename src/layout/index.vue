@@ -2,8 +2,6 @@
 import Navbar from './components/Navbar/index.vue'
 import Sidebar from './components/Sidebar/index.vue'
 import Tabs from './components/Tabs/index.vue'
-
-const collapsed = ref<boolean>(false)
 </script>
 
 <template>

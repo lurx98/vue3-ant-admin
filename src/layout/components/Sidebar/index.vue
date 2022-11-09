@@ -43,7 +43,6 @@ watch(
   () => {
     const result = findPatentValue(permission.routers, route.path)
     tabs.add(route)
-    console.log(result)
     selectedKeys2.value = result
   },
   { immediate: true }

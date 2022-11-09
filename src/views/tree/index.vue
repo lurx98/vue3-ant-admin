@@ -1,6 +1,4 @@
-<script setup lang="ts" name="tree">
-import { reactive, ref } from 'vue'
-</script>
+<script setup lang="ts" name="tree"></script>
 
 <template>
   <h1>tree</h1>
