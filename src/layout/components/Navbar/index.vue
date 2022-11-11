@@ -1,20 +1,22 @@
 <script setup lang="ts" name="Navbar">
 import { UserOutlined, DownOutlined } from '@ant-design/icons-vue'
-import useStore from '../../../store/index'
+import useStore from '@/store/index'
 const { user } = useStore()
 const quit = () => {
   user.quit()
 }
+const a = ref([1, 2, 3, 4, 6, 7])
 </script>
 
 <template>
   <a-layout-header class="navbar">
     <a-row type="flex" justify="space-between">
-      <a-col>col-8</a-col>
+      <a-col>xxxxxxxxxxxxxxx</a-col>
       <a-col>
         <a-row type="flex" justify="space-between" :gutter="16">
           <a-col>
-            <a-avatar size="small">
+            <a-avatar v-if="user.avatar" :src="user.avatar" />
+            <a-avatar v-else size="small">
               <template #icon><UserOutlined /></template>
             </a-avatar>
           </a-col>
@@ -45,13 +47,13 @@ const quit = () => {
   </a-layout-header>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   width: 100%;
-  background-color: aqua;
+  background-color: $headBg;
 }
 </style>

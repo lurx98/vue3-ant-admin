@@ -1,6 +1,6 @@
 import router from './router'
 import { getToken } from '@/utils/auth' // get token from cookie
-import { pinia } from './store/store'
+import { pinia } from './store'
 import useUserStore from '@/store/modules/user'
 import usePermission from '@/store/modules/permission'
 import NProgress from 'nprogress' // progress bar

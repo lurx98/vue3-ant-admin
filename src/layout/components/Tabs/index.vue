@@ -1,5 +1,5 @@
 <script setup lang="ts" name="Tabs">
-import useStore from '../../../store/index'
+import useStore from '@/store/index'
 const route = useRoute()
 const router = useRouter()
 const { tabs } = useStore()
@@ -23,4 +23,4 @@ const tabClick = (val: any) => {
   </a-tabs>
 </template>
 
-<style scoped lang="less"></style>
+<style scoped lang="scss"></style>

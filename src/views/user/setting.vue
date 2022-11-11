@@ -4,4 +4,4 @@
   <h1>setting</h1>
 </template>
 
-<style scoped lang="less"></style>
+<style scoped lang="scss"></style>

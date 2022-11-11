@@ -2,7 +2,7 @@
 import SidebarItem from './SidebarItem.vue'
 import type { MenuProps } from 'ant-design-vue'
 import { RouteRecordRaw } from 'vue-router'
-import useStore from '../../../store/index'
+import useStore from '@/store/index'
 const { tabs, permission } = useStore()
 const route = useRoute()
 const router = useRouter()

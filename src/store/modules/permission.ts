@@ -13,11 +13,11 @@ export default defineStore('permission', {
       //  data 就是服务器返回的该用户的角色对应的权限标识
       // 遍历所有的动态路由映射，判断它的name是不是在权限标识数组中，如果在说明属于该用户的动态路由映射
       const userRoutes = [] as RouteRecordRaw[]
-      asyncRouter.forEach((item) => {
-        let arr = [] as any
+      asyncRouter.forEach(item => {
+        let arr = [] as RouteRecordRaw[]
         if (data.includes(item.name as string)) userRoutes.push(item)
         if (item.children) {
-          item.children.forEach((val) => {
+          item.children.forEach(val => {
             if (data.includes(val.name as string)) arr.push(val)
           })
         }

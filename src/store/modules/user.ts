@@ -6,7 +6,8 @@ export default defineStore('user', {
   state() {
     return {
       token: getToken(),
-      username: ''
+      username: '',
+      avatar: ''
     }
   },
   actions: {
@@ -23,6 +24,7 @@ export default defineStore('user', {
     async getUserInfo() {
       const res = await getUser()
       this.username = res.name
+      this.avatar = res.avatar
       return res.menu
     }
   }

@@ -31,5 +31,14 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
       '*': path.resolve('')
     }
+  },
+  css: {
+    preprocessorOptions: {
+      // 全局样式引入
+      scss: {
+        additionalData: '@import "./src/styles/variables.scss";',
+        javascriptEnabled: true
+      }
+    }
   }
 })

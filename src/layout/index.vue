@@ -24,7 +24,7 @@ import Tabs from './components/Tabs/index.vue'
   </a-layout>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .ant-layout {
   width: 100%;
   // min-height: 100%;
